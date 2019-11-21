@@ -4,6 +4,7 @@
 var AWS = require("aws-sdk");
 AWS.config.update({ region: process.env.AWS_REGION });
 var DDB = new AWS.DynamoDB({ apiVersion: "2012-10-08" });
+console.log("ON DISCONNECT RUBAN");
 
 exports.handler = function (event, context, callback) {
   var deleteParams = {
