@@ -9,8 +9,18 @@ pipeline {
     stages {
         stage('Build Stage') {
             steps {
-                    sh("echo Build Stage!!");
+                dir("onconnect"){
+                    sh("echo onconnect!!");
                     sh("npm install");
+                }
+                 dir("ondisconnect"){
+                    sh("echo ondisconnect!");
+                    sh("npm install");
+                }
+                 dir("sendmessage"){
+                    sh("echo sendmessage!!");
+                    sh("npm install");
+                }    
             }
         }
         stage('Deploy Stage') {
